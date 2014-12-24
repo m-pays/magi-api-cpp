@@ -127,6 +127,7 @@ public:
     std::string getblockhash(int blocknumber);
     blockinfo_t getblock(const std::string& blockhash);
     blockinfo_t getblockbynumber(int blocknumber);
+    blockvalue_t getnewblockvaluebynumber(int blocknumber);
     int getblockcount();
 
     void setgenerate(bool generate, int genproclimit = -1);

@@ -225,7 +225,14 @@
 	};
 
 
-	/* === Unused yet === */
+	struct blockvalue_t{
+		std::string flags;
+		double difficulty;
+		double difficultyV2;
+		double blockvalue;
+		double blockvalue2;
+	};
+
 	struct blockinfo_t{
 		std::string hash;
 		int confirmations;

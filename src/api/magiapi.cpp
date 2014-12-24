@@ -902,6 +902,24 @@ blockinfo_t MagiAPI::getblock(const string& blockhash) {
 }
 
 
+blockvalue_t MagiAPI::getnewblockvaluebynumber(int blocknumber) {
+	string command = "getblockbynumber";
+	Value params, result;
+	params.append(blocknumber);
+	result = sendcommand(command, params);
+
+	blockvalue_t ret;
+
+	ret.flags = result["flags"].asString();
+	ret.difficulty = result["difficulty"].asDouble();
+	ret.difficulty = result["difficulty-V2"].asDouble();
+	ret.blockvalue = result["blockvalue"].asDouble();
+	ret.blockvalue2 = result["blockvalue2"].asDouble();
+
+	return ret;
+}
+
+
 blockinfo_t MagiAPI::getblockbynumber(int blocknumber) {
 	string command = "getblockbynumber";
 	Value params, result;
